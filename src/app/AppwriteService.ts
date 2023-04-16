@@ -1,7 +1,6 @@
 import { Account, Avatars, Client } from "appwrite";
 
-// export const SsrHostname: string = "next-js.ssr.almostapps.eu";
-export const SsrHostname: string = "localhost";
+export const SsrHostname: string = "next-js.ssr.almostapps.eu";
 export const AppwriteHostname: string = "appwrite.next-js.ssr.almostapps.eu";
 
 export const AppwriteEndpoint =
