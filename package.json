@@ -9,14 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@appwrite.io/pink": "^0.0.6-rc.10",
     "@types/node": "18.15.11",
     "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",
+    "appwrite": "^11.0.0",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "server-only": "^0.0.1",
+    "set-cookie-parser": "^2.6.0",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/set-cookie-parser": "^2.4.2"
   }
 }

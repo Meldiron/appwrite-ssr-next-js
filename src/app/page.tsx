@@ -1,102 +1,56 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import Auth from "./Auth";
+import CardClient from "./CardClient";
+import CardServer from "./CardServer";
+import Menu from "./Menu";
+import { getAccount } from "./page-data";
 
-const inter = Inter({ subsets: ['latin'] })
+export default async function Home() {
+  const account = await getAccount();
 
-export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="grid-with-side">
+      <Menu />
+
+      <main className="main-content">
+        <div className="top-cover u-padding-block-end-56">
+          <div className="container">
+            <div className="u-flex u-gap-16 u-flex-justify-center u-margin-block-start-16">
+              <h1 className="heading-level-1">Appwrite Loves Next.js</h1>
+              <code className="u-un-break-text" />
+            </div>
+            <p
+              className="body-text-1 u-normal u-margin-block-start-8"
+              style={{
+                maxWidth: "50rem",
+              }}
+            >
+              This is demo application. Use button below to create account.
+              Notice both server-side rendering, and client-side requests are
+              authorized. The whole process uses 1st party secure cookies.
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <div className="container u-margin-block-start-negative-56">
+          <ul
+            className="grid-box"
+            style={
+              {
+                "--grid-gap": "2rem",
+                "--grid-item-size": "24rem",
+                "--grid-item-size-small-screens": "16rem",
+              } as any
+            }
+          >
+            <li>
+              <CardServer account={account} />
+            </li>
+            <li>
+              <CardClient />
+            </li>
+          </ul>
+        </div>
+        <Auth />
+      </main>
+    </div>
+  );
 }
