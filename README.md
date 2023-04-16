@@ -1,4 +1,4 @@
-![Almost Cover](static/cover.png)
+![Almost Cover](public/cover.png)
 
 # Almost SSR - Next.js Kit
 
