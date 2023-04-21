@@ -148,7 +148,7 @@ export default function Menu() {
                   </a>
                 </li>
                 <li className="drop-list-item">
-                  <a className="drop-button u-cross-center" href="/">
+                  <a className="drop-button u-cross-center" href="https://astro.ssr.almostapps.eu/">
                     <svg
                       role="img"
                       width="16"
@@ -162,7 +162,6 @@ export default function Menu() {
                       />
                     </svg>
                     <span className="text">Astro</span>
-                    <code className="inline-code">WIP</code>
                   </a>
                 </li>
                 <li className="drop-list-item">
