@@ -132,7 +132,7 @@ export default function Menu() {
 
                  <li className="drop-list-item">
                     <a
-                      className="drop-button u-cross-center is-selected"
+                      className="drop-button u-cross-center"
                       href="https://qwik.ssr.almostapps.eu/"
                     >
                       <svg
