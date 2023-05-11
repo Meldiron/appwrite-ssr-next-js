@@ -1,6 +1,6 @@
 ![Almost Cover](public/cover.png)
 
-# Almost SSR - Next.js Kit
+# Almost SSR - Next.js
 
 > Demo application with authorized server-side and client-side rendering.
 
